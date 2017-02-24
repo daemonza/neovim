@@ -49,8 +49,19 @@ syntax enable
 " Configuration
 
 color dracula
+" no beeping
+set noerrorbells   
+" ignore case while searching
+set ignorecase
+" ignore case unless query have case set 
+set smartcase
 
 " Key bindings
+" get to commands faster
+nnoremap ; :
+" leader key
+let mapleader = "\<SPACE>" 
+" show tagbar
 nmap <F8> :TagbarToggle<CR>
 
 " Run deoplete.nvim automatically
