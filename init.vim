@@ -22,6 +22,10 @@ if dein#load_state('/Users/wgillmer/.dein')
   call dein#add('fatih/vim-go')
   call dein#add('Shougo/deoplete.nvim')
   call dein#add('zchee/deoplete-go', {'build': 'make'})
+  call dein#add('majutsushi/tagbar')
+
+  " Theme
+  call dein#add('dracula/vim')
 
   " You can specify revision/branch/tag.
   "call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
@@ -43,6 +47,12 @@ syntax enable
 "End dein Scripts-------------------------
 
 " Configuration
+
+color dracula
+
+" Key bindings
+nmap <F8> :TagbarToggle<CR>
+
 " Run deoplete.nvim automatically
 let g:deoplete#enable_at_startup = 1
 " deoplete-go settings
