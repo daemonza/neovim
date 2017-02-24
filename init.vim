@@ -23,6 +23,7 @@ if dein#load_state('/Users/wgillmer/.dein')
   call dein#add('Shougo/deoplete.nvim')
   call dein#add('zchee/deoplete-go', {'build': 'make'})
   call dein#add('majutsushi/tagbar')
+  call dein#add('ctrlpvim/ctrlp.vim')
 
   " Theme
   call dein#add('dracula/vim')
@@ -82,3 +83,4 @@ let g:go_highlight_build_constraints = 1
 
 " use goimports with vim-go instead of gofmt
 let g:go_fmt_command = "goimports"
+
