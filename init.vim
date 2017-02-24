@@ -64,6 +64,12 @@ nnoremap ; :
 let mapleader = "\<SPACE>" 
 " show tagbar
 nmap <F8> :TagbarToggle<CR>
+" Open file menu
+nnoremap <Leader>o :CtrlP<CR>
+" Open buffer menu
+nnoremap <Leader>b :CtrlPBuffer<CR>
+" Open most recently used files
+nnoremap <Leader>f :CtrlPMRUFiles<CR>
 
 " Run deoplete.nvim automatically
 let g:deoplete#enable_at_startup = 1
