@@ -28,6 +28,10 @@ if dein#load_state('/Users/wgillmer/.dein')
   call dein#add('vim-airline/vim-airline-themes')
   call dein#add('mhinz/vim-startify')
   call dein#add('airblade/vim-gitgutter')
+  call dein#add('itchyny/vim-gitbranch')
+  call dein#add('godlygeek/tabular')
+  call dein#add('plasticboy/vim-markdown')
+  call dein#add('ekalinin/Dockerfile.vim')
 
   " Theme
   call dein#add('dracula/vim')
@@ -110,3 +114,7 @@ let g:airline_theme= 'dracula'
 " vim-gutter configuration
 let g:gitgutter_override_sign_column_highlight = 0
 highlight SignColumn ctermbg=black
+
+" markdown configuration
+" disabled automatic folding
+let g:vim_markdown_folding_disabled=1
