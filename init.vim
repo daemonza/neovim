@@ -32,6 +32,7 @@ if dein#load_state('/Users/wgillmer/.dein')
   call dein#add('godlygeek/tabular')
   call dein#add('plasticboy/vim-markdown')
   call dein#add('ekalinin/Dockerfile.vim')
+  call dein#add('vim-syntastic/syntastic')
 
   " Theme
   call dein#add('dracula/vim')
@@ -99,7 +100,7 @@ let g:go_highlight_build_constraints = 1
 let g:go_fmt_command = "goimports"
 
 " airline configuration
-let g:airline#extensions#tabline#enabled = 2
+"let g:airline#extensions#tabline#enabled = 2
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
@@ -118,3 +119,9 @@ highlight SignColumn ctermbg=black
 " markdown configuration
 " disabled automatic folding
 let g:vim_markdown_folding_disabled=1
+
+" syntastic configuration
+" make it play nice with vim-go
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+let g:go_list_type = "quickfix"
