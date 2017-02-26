@@ -24,6 +24,9 @@ if dein#load_state('/Users/wgillmer/.dein')
   call dein#add('zchee/deoplete-go', {'build': 'make'})
   call dein#add('majutsushi/tagbar')
   call dein#add('ctrlpvim/ctrlp.vim')
+  call dein#add('vim-airline/vim-airline')
+  call dein#add('vim-airline/vim-airline-themes')
+  call dein#add('mhinz/vim-startify')
 
   " Theme
   call dein#add('dracula/vim')
@@ -90,3 +93,15 @@ let g:go_highlight_build_constraints = 1
 " use goimports with vim-go instead of gofmt
 let g:go_fmt_command = "goimports"
 
+" airline configuration
+let g:airline#extensions#tabline#enabled = 2
+let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#right_sep = ' '
+let g:airline#extensions#tabline#right_alt_sep = '|'
+let g:airline_left_sep = ' '
+let g:airline_left_alt_sep = '|'
+let g:airline_right_sep = ' '
+let g:airline_right_alt_sep = '|'
+let g:airline_theme= 'dracula'
