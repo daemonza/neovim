@@ -27,6 +27,7 @@ if dein#load_state('/Users/wgillmer/.dein')
   call dein#add('vim-airline/vim-airline')
   call dein#add('vim-airline/vim-airline-themes')
   call dein#add('mhinz/vim-startify')
+  call dein#add('airblade/vim-gitgutter')
 
   " Theme
   call dein#add('dracula/vim')
@@ -105,3 +106,7 @@ let g:airline_left_alt_sep = '|'
 let g:airline_right_sep = ' '
 let g:airline_right_alt_sep = '|'
 let g:airline_theme= 'dracula'
+
+" vim-gutter configuration
+let g:gitgutter_override_sign_column_highlight = 0
+highlight SignColumn ctermbg=black
