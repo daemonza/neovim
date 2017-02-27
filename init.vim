@@ -15,10 +15,7 @@ if dein#load_state('/Users/wgillmer/.dein')
   call dein#add('/Users/wgillmer/.dein/repos/github.com/Shougo/dein.vim')
 
   " Add or remove your plugins here:
-  " call dein#add('Shougo/neosnippet.vim')
-  " call dein#add('Shougo/neosnippet-snippets')
-
-  " Go development 
+  call dein#add('dracula/vim')
   call dein#add('fatih/vim-go')
   call dein#add('Shougo/deoplete.nvim')
   call dein#add('zchee/deoplete-go', {'build': 'make'})
@@ -33,9 +30,9 @@ if dein#load_state('/Users/wgillmer/.dein')
   call dein#add('plasticboy/vim-markdown')
   call dein#add('ekalinin/Dockerfile.vim')
   call dein#add('vim-syntastic/syntastic')
+  call dein#add('Shougo/unite.vim')
+  call dein#add('tpope/vim-commentary')
 
-  " Theme
-  call dein#add('dracula/vim')
 
   " You can specify revision/branch/tag.
   "call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
@@ -57,7 +54,7 @@ syntax enable
 "End dein Scripts-------------------------
 
 " Configuration
-
+" set theme
 color dracula
 " no beeping
 set noerrorbells   
@@ -65,6 +62,11 @@ set noerrorbells
 set ignorecase
 " ignore case unless query have case set 
 set smartcase
+" set relative line numbers
+set relativenumber
+" show the actual line number where you are at
+set number
+set cursorline
 
 " Key bindings
 " get to commands faster
@@ -76,9 +78,9 @@ nmap <F8> :TagbarToggle<CR>
 " Open file menu
 nnoremap <Leader>o :CtrlP<CR>
 " Open buffer menu
-nnoremap <Leader>b :CtrlPBuffer<CR>
+nnoremap <Leader>b :Unite buffer<CR>
 " Open most recently used files
-nnoremap <Leader>f :CtrlPMRUFiles<CR>
+nnoremap <Leader>f :Unite file<CR>
 
 " Run deoplete.nvim automatically
 let g:deoplete#enable_at_startup = 1
@@ -101,16 +103,16 @@ let g:go_fmt_command = "goimports"
 
 " airline configuration
 "let g:airline#extensions#tabline#enabled = 2
-let g:airline#extensions#tabline#fnamemod = ':t'
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline#extensions#tabline#right_sep = ' '
-let g:airline#extensions#tabline#right_alt_sep = '|'
-let g:airline_left_sep = ' '
-let g:airline_left_alt_sep = '|'
-let g:airline_right_sep = ' '
-let g:airline_right_alt_sep = '|'
-let g:airline_theme= 'dracula'
+"let g:airline#extensions#tabline#fnamemod = ':t'
+"let g:airline#extensions#tabline#left_sep = ' '
+"let g:airline#extensions#tabline#left_alt_sep = '|'
+"let g:airline#extensions#tabline#right_sep = ' '
+"let g:airline#extensions#tabline#right_alt_sep = '|'
+"let g:airline_left_sep = ' '
+"let g:airline_left_alt_sep = '|'
+"let g:airline_right_sep = ' '
+"let g:airline_right_alt_sep = '|'
+"let g:airline_theme= 'dracula'
 
 " vim-gutter configuration
 let g:gitgutter_override_sign_column_highlight = 0
