@@ -1,50 +1,50 @@
 "dein Scripts-----------------------------
-if &compatible
-  set nocompatible               " Be iMproved
-endif
+" if &compatible
+"   set nocompatible               " Be iMproved
+" endif
 
-" Required:
-set runtimepath+=/Users/wgillmer/.dein/repos/github.com/Shougo/dein.vim
+" " Required:
+" " set runtimepath+=/Users/wgillmer/.dein/repos/github.com/Shougo/dein.vim
 
-" Required:
-if dein#load_state('/Users/wgillmer/.dein')
-  call dein#begin('/Users/wgillmer/.dein')
+" " Required:
+" if dein#load_state('/Users/wgillmer/.dein')
+"   call dein#begin('/Users/wgillmer/.dein')
 
-  " Let dein manage dein
-  " Required:
-  call dein#add('/Users/wgillmer/.dein/repos/github.com/Shougo/dein.vim')
+"   " Let dein manage dein
+"   " Required:
+"   call dein#add('/Users/wgillmer/.dein/repos/github.com/Shougo/dein.vim')
 
-  " Add or remove your plugins here:
-  call dein#add('dracula/vim')
-  call dein#add('fatih/vim-go')
-  call dein#add('Shougo/deoplete.nvim')
-  call dein#add('zchee/deoplete-go', {'build': 'make'})
-  call dein#add('majutsushi/tagbar')
-  call dein#add('ctrlpvim/ctrlp.vim')
-  call dein#add('vim-airline/vim-airline')
-  call dein#add('vim-airline/vim-airline-themes')
-  call dein#add('mhinz/vim-startify')
-  call dein#add('airblade/vim-gitgutter')
-  call dein#add('itchyny/vim-gitbranch')
-  call dein#add('godlygeek/tabular')
-  call dein#add('plasticboy/vim-markdown')
-  call dein#add('ekalinin/Dockerfile.vim')
-  call dein#add('vim-syntastic/syntastic')
-  call dein#add('Shougo/unite.vim')
-  call dein#add('tpope/vim-commentary')
+"   " Add or remove your plugins here:
+"   call dein#add('dracula/vim')
+"   call dein#add('fatih/vim-go')
+"   call dein#add('Shougo/deoplete.nvim')
+"   call dein#add('zchee/deoplete-go', {'build': 'make'})
+"   call dein#add('majutsushi/tagbar')
+"   call dein#add('ctrlpvim/ctrlp.vim')
+"   call dein#add('vim-airline/vim-airline')
+"   call dein#add('vim-airline/vim-airline-themes')
+"   call dein#add('mhinz/vim-startify')
+"   call dein#add('airblade/vim-gitgutter')
+"   call dein#add('itchyny/vim-gitbranch')
+"   call dein#add('godlygeek/tabular')
+"   call dein#add('plasticboy/vim-markdown')
+"   call dein#add('ekalinin/Dockerfile.vim')
+"   call dein#add('vim-syntastic/syntastic')
+"   call dein#add('Shougo/unite.vim')
+"   call dein#add('tpope/vim-commentary')
 
 
-  " You can specify revision/branch/tag.
-  "call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
+"   " You can specify revision/branch/tag.
+"   "call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
 
-  " Required:
-  call dein#end()
-  call dein#save_state()
-endif
+"   " Required:
+"   call dein#end()
+"   call dein#save_state()
+" endif
 
-" Required:
-filetype plugin indent on
-syntax enable
+" " Required:
+" filetype plugin indent on
+" syntax enable
 
 " If you want to install not installed plugins on startup.
 "if dein#check_install()
@@ -52,6 +52,31 @@ syntax enable
 "endif
 
 "End dein Scripts-------------------------
+"
+
+" setup plugins directory for vim-plug
+call plug#begin('~/.vim_plugins')
+
+Plug 'dracula/vim'
+Plug 'fatih/vim-go'
+Plug 'Shougo/deoplete.nvim'
+Plug 'zchee/deoplete-go', {'build': 'make'}
+Plug 'majutsushi/tagbar'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'mhinz/vim-startify'
+Plug 'airblade/vim-gitgutter'
+Plug 'itchyny/vim-gitbranch'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+Plug 'ekalinin/Dockerfile.vim'
+Plug 'vim-syntastic/syntastic'
+Plug 'Shougo/unite.vim'
+Plug 'tpope/vim-commentary'
+
+" Initialize plugin system
+call plug#end()
 
 " Configuration
 " set theme
@@ -75,12 +100,15 @@ nnoremap ; :
 let mapleader = "\<SPACE>" 
 " show tagbar
 nmap <F8> :TagbarToggle<CR>
-" Open file menu
-nnoremap <Leader>o :CtrlP<CR>
+
+" Unite key bindings
 " Open buffer menu
-nnoremap <Leader>b :Unite buffer<CR>
+" nnoremap <Leader>b :Unite buffer<CR>
 " Open most recently used files
-nnoremap <Leader>f :Unite file<CR>
+" nnoremap <Leader>f :Unite file<CR>
+
+" fzf key bindings 
+" nnoremap <Leader>b : <CR>
 
 " Run deoplete.nvim automatically
 let g:deoplete#enable_at_startup = 1
