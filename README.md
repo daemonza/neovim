@@ -27,3 +27,9 @@ mkdir $HOME/.config/init.vim
 
 Install `dein` (https://github.com/Shougo/dein.vim)
 
+#### Dependencies
+
+ag for code searching using fzf
+```
+brew install the_silver_searcher
+```
